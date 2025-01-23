@@ -27,7 +27,7 @@ $input_checked = ! empty( $input_value );
 				this.minWidth = this.$refs.offText.offsetWidth + 33;
 			}
 		});
-	}
+	},
 }"
 	:style="{ width: wrapperWidth + 'px', '--on-translate': wrapperWidth - 26 + 'px' }"
 >
@@ -39,6 +39,7 @@ $input_checked = ! empty( $input_value );
 			class="wp-switch-checkbox"
 			x-ref="checkbox"
 			@click="checked = ! checked"
+            x-model="<?php echo esc_attr( $input_id ); ?>"
 			<?php checked( $input_checked ); ?>
 	/>
 	<span
@@ -46,8 +47,14 @@ $input_checked = ! empty( $input_value );
 			@click="$refs.checkbox.click()"
 			x-ref="slider"
 			:style="{ width: minWidth + 'px' }"
-            x-resize="wrapperWidth = $width"
+			x-resize="wrapperWidth = $width"
 	></span>
 	<span class="wp-switch-text wp-switch-text-on" x-ref="onText"><?php echo esc_html( $input_on_text ); ?></span>
 	<span class="wp-switch-text wp-switch-text-off" x-ref="offText"><?php echo esc_html( $input_off_text ); ?></span>
 </div>
+<p class="description">
+	<?php
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $input_help;
+	?>
+</p>
