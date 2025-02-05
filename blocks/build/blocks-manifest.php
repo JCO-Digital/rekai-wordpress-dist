@@ -18,8 +18,16 @@ return array(
 		),
 		'attributes' => array(
 			'nrofhits' => array(
-				'type' => 'number',
-				'default' => 10
+				'type' => 'string',
+				'default' => '10'
+			),
+			'currentLanguage' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'addcontent' => array(
+				'type' => 'boolean',
+				'default' => false
 			),
 			'subtree' => array(
 				'type' => 'string',
