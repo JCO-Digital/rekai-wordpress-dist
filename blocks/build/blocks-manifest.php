@@ -17,7 +17,14 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
-			
+			'nrofhits' => array(
+				'type' => 'number',
+				'default' => 10
+			),
+			'subtree' => array(
+				'type' => 'string',
+				'default' => ''
+			)
 		),
 		'textdomain' => 'rekai-wordpress',
 		'editorScript' => 'file:./index.js',
