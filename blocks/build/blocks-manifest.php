@@ -97,6 +97,14 @@ return array(
 				'type' => 'string',
 				'default' => ''
 			),
+			'renderstyle' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'userootpath' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
 				'default' => true
