@@ -22,7 +22,34 @@ return array(
 				'type' => 'string',
 				'default' => ''
 			),
-			'useRoot' => array(
+			'pathOption' => array(
+				'type' => 'string',
+				'default' => 'all',
+				'enum' => array(
+					'all',
+					'rootPath',
+					'maxDepth',
+					'rootPathLevel'
+				)
+			),
+			'depth' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'limit' => array(
+				'type' => 'string',
+				'default' => 'none',
+				'enum' => array(
+					'none',
+					'subPages',
+					'minDepth'
+				)
+			),
+			'limitDepth' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'useCurrentLanguage' => array(
 				'type' => 'boolean',
 				'default' => false
 			),
