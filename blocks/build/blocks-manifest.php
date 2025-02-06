@@ -31,6 +31,10 @@ return array(
 				'default' => array(
 					
 				)
+			),
+			'extraAttributes' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'supports' => array(
