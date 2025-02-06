@@ -62,6 +62,10 @@ return array(
 				'type' => 'string',
 				'default' => '10'
 			),
+			'headerText' => array(
+				'type' => 'string',
+				'default' => ''
+			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
 				'default' => true
