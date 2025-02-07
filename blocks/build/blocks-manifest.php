@@ -97,13 +97,49 @@ return array(
 				'type' => 'string',
 				'default' => ''
 			),
-			'renderstyle' => array(
-				'type' => 'string',
-				'default' => ''
-			),
-			'userootpath' => array(
+			'showHeader' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'pathOption' => array(
+				'type' => 'string',
+				'default' => 'all',
+				'enum' => array(
+					'all',
+					'rootPath',
+					'maxDepth',
+					'rootPathLevel'
+				)
+			),
+			'depth' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'limit' => array(
+				'type' => 'string',
+				'default' => 'none',
+				'enum' => array(
+					'none',
+					'subPages',
+					'minDepth'
+				)
+			),
+			'limitDepth' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'renderstyle' => array(
+				'type' => 'string',
+				'default' => '',
+				'enum' => array(
+					'list',
+					'pills',
+					'advanced'
+				)
+			),
+			'listcols' => array(
+				'type' => 'string',
+				'default' => '1'
 			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
