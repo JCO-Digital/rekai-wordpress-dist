@@ -145,6 +145,18 @@ return array(
 				'type' => 'string',
 				'default' => '2'
 			),
+			'showImage' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'fallbackimgsrc' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'showIngress' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
 				'default' => true
