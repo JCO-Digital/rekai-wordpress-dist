@@ -130,7 +130,7 @@ return array(
 			),
 			'renderstyle' => array(
 				'type' => 'string',
-				'default' => '',
+				'default' => 'list',
 				'enum' => array(
 					'list',
 					'pills',
@@ -141,6 +141,10 @@ return array(
 				'type' => 'string',
 				'default' => '1'
 			),
+			'cols' => array(
+				'type' => 'string',
+				'default' => '2'
+			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
 				'default' => true
@@ -150,6 +154,10 @@ return array(
 				'default' => false
 			),
 			'subtree' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'extraAttributes' => array(
 				'type' => 'string',
 				'default' => ''
 			)
