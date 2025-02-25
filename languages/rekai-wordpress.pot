@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rekai WordPress 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rekai-wordpress\n"
-"POT-Creation-Date: 2025-02-17 12:09:39+00:00\n"
+"POT-Creation-Date: 2025-02-25 10:39:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: classes/Options/OptionsPage.php:278
+#: classes/Options/OptionsPage.php:279
 msgid "10"
 msgstr ""
 
@@ -54,147 +54,151 @@ msgstr ""
 msgid "Enable Rek.ai"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:191 classes/Options/OptionsPage.php:458
-msgid "Script Key"
+#: classes/Options/OptionsPage.php:191
+msgid "https://static.rekai.se/XXXXXXXX.js"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:194
+#: classes/Options/OptionsPage.php:195
 #. translators: 1: is a link to a support document. 2: closing link
 msgid ""
-"The script key can be found in your dashboard, %1$splease refer to this "
+"The embed code can be found in your dashboard, %1$splease refer to this "
 "document%2$s for more information."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:212
+#: classes/Options/OptionsPage.php:213
 msgid "Enable Autocomplete"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:213
+#: classes/Options/OptionsPage.php:214
 msgid "Enables autocomplete for the Rek.ai plugin."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:228 classes/Options/OptionsPage.php:610
+#: classes/Options/OptionsPage.php:229 classes/Options/OptionsPage.php:611
 msgid "Autocomplete mode"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:229
+#: classes/Options/OptionsPage.php:230
 msgid "Select the mode for the autocomplete."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:230
+#: classes/Options/OptionsPage.php:231
 msgid "Auto"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:231
+#: classes/Options/OptionsPage.php:232
 msgid "Manual"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:246 classes/Options/OptionsPage.php:621
+#: classes/Options/OptionsPage.php:247 classes/Options/OptionsPage.php:622
 msgid "Autocomplete selector"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:247
+#: classes/Options/OptionsPage.php:248
 msgid "Insert the selector for the autocomplete."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:262 classes/Options/OptionsPage.php:642
+#: classes/Options/OptionsPage.php:263 classes/Options/OptionsPage.php:643
 msgid "Use current language"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:263
+#: classes/Options/OptionsPage.php:264
 msgid "Use the current language for the autocomplete."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:279
+#: classes/Options/OptionsPage.php:280
 msgid "Number of results to show in the autocomplete dropdown."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:296
+#: classes/Options/OptionsPage.php:297
 msgid "Navigate on click"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:297
+#: classes/Options/OptionsPage.php:298
 msgid "Navigate to the selected item when clicking on it."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:312 classes/Options/OptionsPage.php:504
+#: classes/Options/OptionsPage.php:313 classes/Options/OptionsPage.php:505
 msgid "Test Mode"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:313
+#: classes/Options/OptionsPage.php:314
 msgid "Enables test mode. This will not send any data to Rek.ai."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:328 classes/Options/OptionsPage.php:515
+#: classes/Options/OptionsPage.php:329 classes/Options/OptionsPage.php:516
 msgid "Use Mock Data"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:329
+#: classes/Options/OptionsPage.php:330
 msgid "Use mock data instead of getting real data from Rek.ai."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:344 classes/Options/OptionsPage.php:526
+#: classes/Options/OptionsPage.php:345 classes/Options/OptionsPage.php:527
 msgid "Project ID"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:347
+#: classes/Options/OptionsPage.php:348
 #. translators: 1: is a link to a support document. 2: closing link
 msgid ""
 "The project ID can be found in your dashboard, %1$splease refer to this "
 "document%2$s for more information."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:365 classes/Options/OptionsPage.php:536
+#: classes/Options/OptionsPage.php:366 classes/Options/OptionsPage.php:537
 msgid "Secret Key"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:368
+#: classes/Options/OptionsPage.php:369
 #. translators: 1: is a link to a support document. 2: closing link
 msgid ""
 "The secret key can be found in your dashboard, %1$splease refer to this "
 "document%2$s for more information."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:393
+#: classes/Options/OptionsPage.php:394
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:399 classes/Options/OptionsPage.php:440
+#: classes/Options/OptionsPage.php:400 classes/Options/OptionsPage.php:441
 msgid "General"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:403 classes/Options/OptionsPage.php:585
+#: classes/Options/OptionsPage.php:404 classes/Options/OptionsPage.php:586
 msgid "Autocomplete"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:407 classes/Options/OptionsPage.php:497
+#: classes/Options/OptionsPage.php:408 classes/Options/OptionsPage.php:498
 msgid "Advanced"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:411
+#: classes/Options/OptionsPage.php:412
 msgid "Documentation"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:447 classes/Options/OptionsPage.php:599
+#: classes/Options/OptionsPage.php:448 classes/Options/OptionsPage.php:600
 msgid "Enabled"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:592
+#: classes/Options/OptionsPage.php:459
+msgid "Embed Code"
+msgstr ""
+
+#: classes/Options/OptionsPage.php:593
 msgid "Automatic settings"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:631
+#: classes/Options/OptionsPage.php:632
 msgid "Open on click"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:653
+#: classes/Options/OptionsPage.php:654
 msgid "Number of results"
 msgstr ""
 
 #: includes/notices.php:23
 #. translators: 1: Url to the options page.
 msgid ""
-"Rek.ai is enabled, but no Script key is set. Rek.ai will not work until you "
+"Rek.ai is enabled, but no embed code is set. Rek.ai will not work until you "
 "set a project ID. Configure it <a href=\"%s\">here</a>."
 msgstr ""
 
