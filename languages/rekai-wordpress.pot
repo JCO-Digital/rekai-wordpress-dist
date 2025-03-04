@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rekai WordPress 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rekai-wordpress\n"
-"POT-Creation-Date: 2025-02-25 10:39:39+00:00\n"
+"POT-Creation-Date: 2025-03-04 18:53:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -195,14 +195,21 @@ msgstr ""
 msgid "Number of results"
 msgstr ""
 
-#: includes/notices.php:23
+#: includes/notices.php:26
 #. translators: 1: Url to the options page.
 msgid ""
 "Rek.ai is enabled, but no embed code is set. Rek.ai will not work until you "
 "set a project ID. Configure it <a href=\"%s\">here</a>."
 msgstr ""
 
-#: includes/notices.php:39
+#: includes/notices.php:43
+#. translators: 1: Url to the options page.
+msgid ""
+"Rek.ai is enabled and in test mode, but Project ID or Secret Key is not "
+"set. They can be set <a href=\"%s\">here</a>."
+msgstr ""
+
+#: includes/notices.php:59
 #. translators: 1: Url to the options page.
 msgid ""
 "Rek.ai is enabled, but the WP environment type is not set to production. "

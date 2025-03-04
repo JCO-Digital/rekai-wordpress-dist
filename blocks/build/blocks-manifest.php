@@ -65,7 +65,23 @@ return array(
 			)
 		),
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			),
+			'background' => array(
+				'backgroundImage' => true,
+				'backgroundSize' => true
+			),
+			'color' => array(
+				'background' => true,
+				'text' => true
+			),
+			'spacing' => array(
+				'padding' => true,
+				'margin' => false
+			)
 		),
 		'textdomain' => 'rekai-wordpress',
 		'editorScript' => 'file:./index.js',
@@ -82,16 +98,40 @@ return array(
 		'category' => 'widgets',
 		'icon' => 'editor-ul',
 		'description' => 'Recommendations block using Rek.ai.',
+		'usesContext' => array(
+			'postType',
+			'postId'
+		),
 		'example' => array(
 			
 		),
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			),
+			'background' => array(
+				'backgroundImage' => true,
+				'backgroundSize' => true
+			),
+			'color' => array(
+				'background' => true,
+				'text' => true
+			),
+			'spacing' => array(
+				'padding' => true,
+				'margin' => false
+			)
 		),
 		'attributes' => array(
-			'nrofhits' => array(
+			'blockType' => array(
 				'type' => 'string',
-				'default' => '10'
+				'default' => 'recommendations'
+			),
+			'nrOfHits' => array(
+				'type' => 'number',
+				'default' => 10
 			),
 			'headerText' => array(
 				'type' => 'string',
@@ -157,17 +197,19 @@ return array(
 				'type' => 'boolean',
 				'default' => true
 			),
+			'ingressMaxLength' => array(
+				'type' => 'number',
+				'default' => 100
+			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
 				'default' => true
 			),
-			'addcontent' => array(
-				'type' => 'boolean',
-				'default' => false
-			),
-			'subtree' => array(
-				'type' => 'string',
-				'default' => ''
+			'subtreeIds' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
 			),
 			'extraAttributes' => array(
 				'type' => 'string',

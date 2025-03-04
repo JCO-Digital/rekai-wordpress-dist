@@ -58,7 +58,23 @@
     }
   },
   "supports": {
-    "html": false
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": false
+    }
   },
   "textdomain": "rekai-wordpress",
   "editorScript": "file:./index.js",
