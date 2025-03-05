@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rekai WordPress 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rekai-wordpress\n"
-"POT-Creation-Date: 2025-03-05 08:22:46+00:00\n"
+"POT-Creation-Date: 2025-03-05 08:44:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Enables autocomplete for the Rek.ai plugin."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:229 classes/Options/OptionsPage.php:611
+#: classes/Options/OptionsPage.php:229 classes/Options/OptionsPage.php:616
 msgid "Autocomplete mode"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:247 classes/Options/OptionsPage.php:622
+#: classes/Options/OptionsPage.php:247 classes/Options/OptionsPage.php:627
 msgid "Autocomplete selector"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Insert the selector for the autocomplete."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:263 classes/Options/OptionsPage.php:643
+#: classes/Options/OptionsPage.php:263 classes/Options/OptionsPage.php:648
 msgid "Use current language"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Navigate to the selected item when clicking on it."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:313 classes/Options/OptionsPage.php:505
+#: classes/Options/OptionsPage.php:313 classes/Options/OptionsPage.php:510
 msgid "Test Mode"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Enables test mode. This will not send any data to Rek.ai."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:329 classes/Options/OptionsPage.php:516
+#: classes/Options/OptionsPage.php:329 classes/Options/OptionsPage.php:521
 msgid "Use Mock Data"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Use mock data instead of getting real data from Rek.ai."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:345 classes/Options/OptionsPage.php:527
+#: classes/Options/OptionsPage.php:345 classes/Options/OptionsPage.php:532
 msgid "Project ID"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgid ""
 "document%2$s for more information."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:366 classes/Options/OptionsPage.php:537
+#: classes/Options/OptionsPage.php:366 classes/Options/OptionsPage.php:542
 msgid "Secret Key"
 msgstr ""
 
@@ -156,18 +156,19 @@ msgid ""
 msgstr ""
 
 #: classes/Options/OptionsPage.php:394
+#: classes/Options/ShortcodeGenerator.php:62
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: classes/Options/OptionsPage.php:400 classes/Options/OptionsPage.php:441
+#: classes/Options/OptionsPage.php:400 classes/Options/OptionsPage.php:446
 msgid "General"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:404 classes/Options/OptionsPage.php:586
+#: classes/Options/OptionsPage.php:404 classes/Options/OptionsPage.php:591
 msgid "Autocomplete"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:408 classes/Options/OptionsPage.php:498
+#: classes/Options/OptionsPage.php:408 classes/Options/OptionsPage.php:503
 msgid "Advanced"
 msgstr ""
 
@@ -175,24 +176,60 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:448 classes/Options/OptionsPage.php:600
+#: classes/Options/OptionsPage.php:416
+msgid "Shortcode Generator"
+msgstr ""
+
+#: classes/Options/OptionsPage.php:453 classes/Options/OptionsPage.php:605
 msgid "Enabled"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:459
+#: classes/Options/OptionsPage.php:464
 msgid "Embed Code"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:593
+#: classes/Options/OptionsPage.php:598
 msgid "Automatic settings"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:632
+#: classes/Options/OptionsPage.php:637
 msgid "Open on click"
 msgstr ""
 
-#: classes/Options/OptionsPage.php:654
+#: classes/Options/OptionsPage.php:659
 msgid "Number of results"
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:68
+msgid "Prediction"
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:70
+msgid "Generate a prediction shortcode for displaying Rek.ai predictions."
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:73
+msgid "Questions & Answers"
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:75
+msgid "Generate a Q&A shortcode for displaying Rek.ai questions and answers."
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:80
+msgid "Number of Hits"
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:87
+msgid "Subtree"
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:92
+msgid "Tags"
+msgstr ""
+
+#: classes/Options/ShortcodeGenerator.php:97
+msgid "Allowed Languages"
 msgstr ""
 
 #: includes/notices.php:26
@@ -220,6 +257,34 @@ msgstr ""
 
 #: views/admin-settings.php:12
 msgid "Rek.ai Settings"
+msgstr ""
+
+#: views/admin-shortcode-generator.php:3
+msgid "Rek.ai Shortcode Generator"
+msgstr ""
+
+#: views/admin-shortcode-generator.php:4
+msgid "Use this tool to generate shortcodes for Rek.ai functionality."
+msgstr ""
+
+#: views/admin-shortcode-generator.php:8
+msgid "Select Shortcode Type"
+msgstr ""
+
+#: views/admin-shortcode-generator.php:20
+msgid "Configure Attributes"
+msgstr ""
+
+#: views/admin-shortcode-generator.php:64
+msgid "Generated Shortcode"
+msgstr ""
+
+#: views/admin-shortcode-generator.php:68
+msgid "Copy Shortcode"
+msgstr ""
+
+#: views/admin-shortcode-generator.php:124
+msgid "Copied!"
 msgstr ""
 
 #: views/fields/secret.php:32
