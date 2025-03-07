@@ -112,6 +112,10 @@
       "type": "boolean",
       "default": true
     },
+    "tags": {
+      "type": "array",
+      "default": []
+    },
     "subtreeIds": {
       "type": "array",
       "default": []
