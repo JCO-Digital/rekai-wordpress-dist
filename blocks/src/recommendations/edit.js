@@ -18,6 +18,7 @@ import {
 } from "@wordpress/block-editor";
 import logo from "../../../assets/img/logo-rekai-blue.svg";
 import "./editor.scss";
+import usePosts from "./usePosts";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -38,38 +39,14 @@ export default function Edit({ attributes, setAttributes, context }) {
     limit,
     depth,
     limitDepth,
-    subtreeIds,
+    subtree,
     extraAttributes,
   } = attributes;
   const separator = "##!!##";
   const isRecommendations = blockType === "recommendations";
   const isQna = !isRecommendations;
-  const [postList, setPostList] = useState([]);
   const [tokenValue, setTokenValue] = useState([]);
-  const { hasResolved, records } = useEntityRecords(
-    "postType",
-    context.postType,
-    {
-      per_page: -1,
-    },
-  );
-
-  useEffect(() => {
-    if (records) {
-      let tokenList = [];
-      setPostList(
-        records.map((record) => {
-          const token =
-            record.title.rendered + separator + record.id.toString();
-          if (subtreeIds.includes(record.id.toString())) {
-            tokenList.push(token);
-          }
-          return token;
-        }),
-      );
-      setTokenValue(tokenList);
-    }
-  }, [records]);
+  const postList = usePosts(subtree, setTokenValue, separator);
 
   return (
     <div {...useBlockProps({ className: blockType })}>
@@ -191,36 +168,34 @@ export default function Edit({ attributes, setAttributes, context }) {
               onChange={(value) => setAttributes({ depth: parseInt(value) })}
             />
           )}
-          {["all"].includes(pathOption) &&
-            ((hasResolved && (
-              <FormTokenField
-                __experimentalExpandOnFocus
-                __next40pxDefaultSize
-                __nextHasNoMarginBottom
-                label={__("Subtree", "rekai-wordpress")}
-                placeholder={__("Search for Page", "jcore")}
-                suggestions={postList}
-                displayTransform={(token) => {
-                  const field = token.split(separator);
-                  return field[0] ?? "";
-                }}
-                value={tokenValue}
-                onChange={(token) => {
-                  console.debug(token);
-                  setTokenValue(token);
-                  let value = token.map((t) => {
-                    const field = t.split(separator);
-                    if (field.length === 2) {
-                      return field[1];
-                    }
-                    return undefined;
-                  });
-                  if (token.length) {
+          {["all"].includes(pathOption) && (
+            <FormTokenField
+              __experimentalExpandOnFocus
+              __next40pxDefaultSize
+              __nextHasNoMarginBottom
+              label={__("Subtree", "rekai-wordpress")}
+              placeholder={__("Search for Page", "jcore")}
+              suggestions={postList}
+              displayTransform={(token) => {
+                const field = token.split(separator);
+                return field[0] ?? "";
+              }}
+              value={tokenValue}
+              onChange={(token) => {
+                setTokenValue(token);
+                let value = token.map((t) => {
+                  const field = t.split(separator);
+                  if (field.length === 1) {
+                    return field[0];
+                  } else if (field.length === 2) {
+                    return field[1];
                   }
-                  setAttributes({ subtreeIds: value });
-                }}
-              />
-            )) || <Spinner />)}
+                  return undefined;
+                });
+                setAttributes({ subtree: value });
+              }}
+            />
+          )}
           <RadioControl
             label={__("Exclude content from subpages?", "rekai-wordpress")}
             selected={limit}

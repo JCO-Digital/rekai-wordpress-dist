@@ -123,7 +123,7 @@ return array(
 					
 				)
 			),
-			'subtreeIds' => array(
+			'subtree' => array(
 				'type' => 'array',
 				'default' => array(
 					
