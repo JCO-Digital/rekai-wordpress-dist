@@ -90,11 +90,11 @@ return array(
 				)
 			),
 			'listcols' => array(
-				'type' => 'string',
+				'type' => 'number',
 				'default' => '1'
 			),
 			'cols' => array(
-				'type' => 'string',
+				'type' => 'number',
 				'default' => '2'
 			),
 			'showImage' => array(
