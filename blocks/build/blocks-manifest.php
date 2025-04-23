@@ -59,28 +59,25 @@ return array(
 				'enum' => array(
 					'all',
 					'rootPath',
-					'maxDepth',
+					'subTree',
 					'rootPathLevel'
 				)
 			),
-			'depth' => array(
+			'rootPathLevel' => array(
 				'type' => 'number',
 				'default' => 1
 			),
-			'limit' => array(
+			'limitations' => array(
 				'type' => 'string',
 				'default' => 'none',
 				'enum' => array(
 					'none',
 					'subPages',
-					'minDepth'
+					'childNodes',
+					'onPageLinks'
 				)
 			),
-			'limitDepth' => array(
-				'type' => 'number',
-				'default' => 1
-			),
-			'renderstyle' => array(
+			'renderStyle' => array(
 				'type' => 'string',
 				'default' => 'list',
 				'enum' => array(
@@ -89,7 +86,7 @@ return array(
 					'advanced'
 				)
 			),
-			'listcols' => array(
+			'listCols' => array(
 				'type' => 'number',
 				'default' => '1'
 			),
@@ -101,7 +98,7 @@ return array(
 				'type' => 'boolean',
 				'default' => true
 			),
-			'fallbackimgsrc' => array(
+			'fallbackImgSrc' => array(
 				'type' => 'string',
 				'default' => ''
 			),
@@ -123,7 +120,7 @@ return array(
 					
 				)
 			),
-			'subtree' => array(
+			'subTree' => array(
 				'type' => 'array',
 				'default' => array(
 					

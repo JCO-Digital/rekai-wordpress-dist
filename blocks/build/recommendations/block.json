@@ -54,28 +54,25 @@
       "enum": [
         "all",
         "rootPath",
-        "maxDepth",
+        "subTree",
         "rootPathLevel"
       ]
     },
-    "depth": {
+    "rootPathLevel": {
       "type": "number",
       "default": 1
     },
-    "limit": {
+    "limitations": {
       "type": "string",
       "default": "none",
       "enum": [
         "none",
         "subPages",
-        "minDepth"
+        "childNodes",
+        "onPageLinks"
       ]
     },
-    "limitDepth": {
-      "type": "number",
-      "default": 1
-    },
-    "renderstyle": {
+    "renderStyle": {
       "type": "string",
       "default": "list",
       "enum": [
@@ -84,7 +81,7 @@
         "advanced"
       ]
     },
-    "listcols": {
+    "listCols": {
       "type": "number",
       "default": "1"
     },
@@ -96,7 +93,7 @@
       "type": "boolean",
       "default": true
     },
-    "fallbackimgsrc": {
+    "fallbackImgSrc": {
       "type": "string",
       "default": ""
     },
@@ -116,7 +113,7 @@
       "type": "array",
       "default": []
     },
-    "subtree": {
+    "subTree": {
       "type": "array",
       "default": []
     },

@@ -12,37 +12,40 @@ use Rekai\Scripts\RekaiMain;
 /**
  * Generates data attributes for the Rekai configuration.
  *
+ * This function transforms block attributes into data attributes that can be used
+ * for Rekai's front-end functionality. It processes testing mode settings,
+ * handles path options, and includes specific attributes based on block type.
+ *
  * @param array $attributes The attributes array to be processed.
  *
- * @return array
+ * @return array An array of HTML data attributes ready to be added to elements.
  */
 function generate_data_attributes( $attributes ) {
 	$data = handle_testing_mode();
-	$data = handle_path_options( $data, $attributes );
+	$data = handle_path_options( $attributes, $data );
 
-	$blocked_attributes = array(
-		'align',
-		'className',
-		'blockType',
-		'currentLanguage',
-		'showHeader',
-		'subtreeIds',
-		'style',
-		'extraAttributes',
+	$passthrough = array(
+		'nrOfHits',
 	);
 
 	switch ( $attributes['blockType'] ?? '' ) {
 		case 'recommendations':
-			$blocked_attributes[] = 'tags';
+			$passthrough[] = 'renderStyle';
+			switch ( $attributes['renderStyle'] ) {
+				case 'list':
+					$passthrough[] = 'listCols';
+					break;
+				case 'advanced':
+					$passthrough[] = 'cols';
+					$passthrough[] = 'showImage';
+					$passthrough[] = 'showIngress';
+					$passthrough[] = 'ingressMaxLength';
+					break;
+			}
 			break;
 		case 'qna':
-			$attributes['entitytype'] = 'rekai-qna';
-			$blocked_attributes[]     = 'renderstyle';
-			$blocked_attributes[]     = 'listcols';
-			$blocked_attributes[]     = 'cols';
-			$blocked_attributes[]     = 'showImage';
-			$blocked_attributes[]     = 'showIngress';
-			$blocked_attributes[]     = 'ingressMaxLength';
+			$data['entitytype'] = 'rekai-qna';
+			$passthrough[]      = 'tags';
 			break;
 	}
 
@@ -50,18 +53,17 @@ function generate_data_attributes( $attributes ) {
 	if ( ! empty( $attributes['currentLanguage'] ) ) {
 		$data['allowedlangs'] = get_bloginfo( 'language' );
 	}
-	if ( isset( $attributes['showHeader'] ) && $attributes['showHeader'] === false ) {
-		$blocked_attributes[] = 'headerText';
+	if ( ! empty( $attributes['showHeader'] ) ) {
+		$passthrough[] = 'headerText';
 	}
 
-	if ( ! empty( $attributes['subtreeIds'] ) ) {
-		$attributes['subtree'] = generate_subtree( $attributes['subtreeIds'] );
-	}
-
-	foreach ( $attributes as $key => $value ) {
-		if ( in_array( $key, $blocked_attributes, true ) ) {
+	foreach ( $passthrough as $key ) {
+		if ( ! isset( $attributes[ $key ] ) ) {
 			continue;
 		}
+
+		$value = $attributes[ $key ];
+
 		if ( is_bool( $value ) ) {
 			$data[ $key ] = $value ? 'true' : 'false';
 		} elseif ( ! empty( $value ) && is_array( $value ) ) {
@@ -75,44 +77,54 @@ function generate_data_attributes( $attributes ) {
 }
 
 /**
- * Handles path-related options and modifies the provided data array based on the attributes.
+ * Processes path options and limitations from block attributes.
  *
- * @param array $data The data array to be modified with path options.
- * @param array $attributes An array of attributes containing path options and limits. Passed by reference to cleanup the attributes.
+ * This function handles different path configurations and content limitations
+ * based on the attributes provided by the block. It configures settings such as
+ * root path usage, subtree navigation, and various content limitations.
  *
- * @return array The modified data array reflecting the applied path options.
+ * @param array $attributes The block attributes containing configuration options.
+ * @param array $data The existing data array to be modified.
+ * @return array The updated data array with path and limitation settings.
  */
-function handle_path_options( array $data, array &$attributes ): array {
+function handle_path_options( array $attributes, $data = array() ): array {
+
+	// Handle Path Options.
 	switch ( $attributes['pathOption'] ?? '' ) {
 		case 'useRoot':
 			$data['userootpath'] = 'true';
 			break;
-		case 'maxDepth':
-			$data['maxpathdepth'] = $attributes['depth'] ?? 1;
+		case 'subTree':
+			if ( ! empty( $attributes['subTreeIds'] ) ) {
+				$data['subtree'] = generate_subtree( $attributes['subTreeIds'] );
+			}
 			break;
 		case 'rootPathLevel':
 			$data['userootpath']   = 'true';
-			$data['rootpathlevel'] = $attributes['depth'] ?? 1;
-			break;
-		default:
+			$data['rootpathlevel'] = $attributes['rootPathLevel'] ?? 1;
 			break;
 	}
-	switch ( $attributes['limit'] ?? '' ) {
+
+	// Handle Limitaions.
+	switch ( $attributes['limitations'] ?? '' ) {
 		case 'subPages':
+			$data['excludetree'] = '';
+			break;
+		case 'childNodes':
 			$data['excludechildnodes'] = 'true';
 			break;
-		case 'minDepth':
-			$data['minpathdepth'] = $attributes['limitDepth'] ?? 1;
-			break;
-		default:
+		case 'onPageLinks':
+			$data['filter_exclude_onpagelinks'] = 'true';
 			break;
 	}
-	unset( $attributes['pathOption'], $attributes['limit'], $attributes['depth'], $attributes['limitDepth'] );
 	return $data;
 }
 
 /**
  * Handles configuration for test mode settings.
+ *
+ * Checks if test mode is enabled and adds necessary project ID and secret key
+ * to the data array. Also configures mock data if that option is enabled.
  *
  * @param array $data Initial data array to populate with test mode settings.
  * @return array Data array with test mode settings if applicable.
