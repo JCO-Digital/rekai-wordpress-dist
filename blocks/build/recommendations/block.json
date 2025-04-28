@@ -117,6 +117,10 @@
       "type": "array",
       "default": []
     },
+    "excludeTree": {
+      "type": "array",
+      "default": []
+    },
     "extraAttributes": {
       "type": "string",
       "default": ""

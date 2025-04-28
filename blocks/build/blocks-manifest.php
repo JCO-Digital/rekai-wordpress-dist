@@ -126,6 +126,12 @@ return array(
 					
 				)
 			),
+			'excludeTree' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
+			),
 			'extraAttributes' => array(
 				'type' => 'string',
 				'default' => ''
