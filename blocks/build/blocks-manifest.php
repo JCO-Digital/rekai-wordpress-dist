@@ -112,7 +112,7 @@ return array(
 			),
 			'currentLanguage' => array(
 				'type' => 'boolean',
-				'default' => true
+				'default' => false
 			),
 			'tags' => array(
 				'type' => 'array',
