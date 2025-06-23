@@ -110,9 +110,13 @@ return array(
 				'type' => 'number',
 				'default' => 100
 			),
-			'currentLanguage' => array(
+			'showLangs' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'allowedLangs' => array(
+				'type' => 'string',
+				'default' => ''
 			),
 			'tags' => array(
 				'type' => 'array',
