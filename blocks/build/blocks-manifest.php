@@ -45,6 +45,10 @@ return array(
 				'type' => 'number',
 				'default' => 10
 			),
+			'headerHeadingLevel' => array(
+				'type' => 'number',
+				'default' => 2
+			),
 			'headerText' => array(
 				'type' => 'string',
 				'default' => ''
