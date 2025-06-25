@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'jcodigital/rekai',
-        'pretty_version' => 'v1.4.2',
-        'version' => '1.4.2.0',
-        'reference' => '919f9edfacf16a06e02ecd77487e543549bae826',
+        'pretty_version' => 'v1.4.3',
+        'version' => '1.4.3.0',
+        'reference' => 'eba9a4d31e726621854192cf53464e871046b3cd',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'jcodigital/rekai' => array(
-            'pretty_version' => 'v1.4.2',
-            'version' => '1.4.2.0',
-            'reference' => '919f9edfacf16a06e02ecd77487e543549bae826',
+            'pretty_version' => 'v1.4.3',
+            'version' => '1.4.3.0',
+            'reference' => 'eba9a4d31e726621854192cf53464e871046b3cd',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
