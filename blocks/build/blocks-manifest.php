@@ -145,7 +145,7 @@ return array(
 				'default' => ''
 			)
 		),
-		'textdomain' => 'rekai-wordpress',
+		'textdomain' => 'rekai',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
