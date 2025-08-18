@@ -1,15 +1,7 @@
 <?php // phpcs:ignore Squiz.Commenting.FileComment.Missing ?>
 <p>
-	<?php
-		$link = esc_attr__('https://docs.rek.ai/integration-modules/wordpress','rekai');
-		$text = esc_html__('Documentation for the plugin','rekai');
-		echo sprintf('<a href="%s" target="_blank">%s</a>.', $link, $text);
-	?>
+	<?php echo sprintf('<a href="%s" target="_blank">%s</a>.', esc_attr__('https://docs.rek.ai/integration-modules/wordpress','rekai'), esc_html__('Documentation for the plugin','rekai')); ?>
 </p>
 <p>
-	<?php
-		$link = esc_attr('admin.php?page=rekai-shortcodes');
-		$text = esc_html__('Shortcode Generator','rekai');
-		echo sprintf('<a href="%s" target="_blank">%s</a>.', $link, $text);
-	?>
+	<?php echo sprintf('<a href="%s" target="_blank">%s</a>.', esc_attr('admin.php?page=rekai-shortcodes'), esc_html__('Shortcode Generator','rekai')); ?>
 </p>
