@@ -3,11 +3,11 @@
  * Plugin Name: Rek.ai
  * Plugin URI: https://github.com/jco-digital/rekai-wordpress
  * Description: Rek.ai integration for WordPress
- * Version: 1.6.0
+ * Version: 1.7.0
  * Author: J&Co Digital Oy
  * Author URI: https://jco.fi
  * Domain Path: /languages
- * Text Domain: rekai
+ * Text Domain: rek-ai
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
