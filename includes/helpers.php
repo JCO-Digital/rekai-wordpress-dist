@@ -7,6 +7,10 @@
 
 namespace Rekai;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Register script wrapper.
  *
@@ -100,15 +104,20 @@ function join_path( string $path, string ...$parts ): string {
  * @param string $template The template file name. E.g. "my-template".
  * @param array  $data An array of data to be passed to the template. Will be available as $rek_my_variable.
  *
- * @return string
+ * @return void
  */
-function render_template( string $template, array $data = array() ): string {
+function render_template( string $template, array $data = array() ): void {
+	// Validate that $template contains only aplhanumeric characters or dash.
+	if ( ! preg_match( '/^[a-z0-9-\/]+$/', $template ) ) {
+		echo 'Error: Invalid template name';
+		return;
+	}
+
 	$final_path = sprintf( '%s/views/%s.php', untrailingslashit( REKAI_PLUGIN_PATH ), $template );
 	if ( ! file_exists( $final_path ) ) {
-		return '';
+		echo 'Error: Template not found';
+		return;
 	}
-	ob_start();
 	extract( $data, EXTR_PREFIX_ALL, 'rek' ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 	require $final_path;
-	return ob_get_clean();
 }

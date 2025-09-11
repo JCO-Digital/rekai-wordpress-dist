@@ -7,6 +7,10 @@
 
 namespace Rekai\Options;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 use Rekai\Singleton;
 use function Rekai\render_checkbox_field;
 use function Rekai\render_number_field;
@@ -393,8 +397,7 @@ class OptionsPage extends Singleton {
 			),
 			'active_tab' => $tab,
 		);
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo render_template( 'admin-settings', $data );
+		render_template( 'admin-settings', $data );
 	}
 
 	/**
@@ -413,7 +416,7 @@ class OptionsPage extends Singleton {
 			array( $this, 'render_general_section' ),
 		);
 
-		// Enabled
+		// Script Enabled.
 		$this->register_field(
 			$page,
 			$section,
@@ -427,7 +430,7 @@ class OptionsPage extends Singleton {
 			)
 		);
 
-		// Embed Code
+		// Embed Code.
 		$this->register_field(
 			$page,
 			$section,
@@ -647,6 +650,18 @@ class OptionsPage extends Singleton {
 		);
 	}
 
+	/**
+	 * Registers a section with the WordPress settings API.
+	 *
+	 * This helper method simplifies the registration of a section.
+	 *
+	 * @param string   $page     The slug-name of the settings page on which to show the section.
+	 * @param string   $section  The slug-name of the section to register.
+	 * @param string   $title    The title of the section to display.
+	 * @param callable $render   The rendering callback function.
+	 *
+	 * @return void
+	 */
 	final public function register_section( $page, $section, $title, $render ) {
 		add_settings_section(
 			$section,
@@ -670,8 +685,8 @@ class OptionsPage extends Singleton {
 	 * Will convert hex codes to full URLs and validate full URLs match expected format.
 	 * Returns empty string if input is invalid.
 	 *
-	 * @param string $input The embed code to sanitize
-	 * @return string The sanitized embed code URL or empty string if invalid
+	 * @param string $input The embed code to sanitize.
+	 * @return string The sanitized embed code URL or empty string if invalid.
 	 */
 	public function sanitize_embed_code( string $input ): string {
 		if ( preg_match( '/^[0-9a-f]{4,}$/', $input, $matches ) ) {
@@ -683,6 +698,12 @@ class OptionsPage extends Singleton {
 		return '';
 	}
 
+	/**
+	 * Sanitizes the autocomplete mode. Only allows 'auto', 'manual' or 'disabled'.
+	 *
+	 * @param string $input The autocomplete mode to sanitize.
+	 * @return string The sanitized autocomplete mode.
+	 */
 	public function sanitize_autocomplete_mode( string $input ): string {
 		if ( $input === 'auto' || $input === 'manual' ) {
 			return $input;

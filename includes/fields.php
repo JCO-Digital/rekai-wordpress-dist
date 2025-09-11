@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Generic handlers for different field types.
  *
@@ -7,6 +6,10 @@
  */
 
 namespace Rekai;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Renders a text field.
@@ -34,8 +37,7 @@ function render_text_field( array $args = array() ): void {
 			'help'        => '',
 		)
 	);
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo render_template( 'fields/text', $data );
+	render_template( 'fields/text', $data );
 }
 
 /**
@@ -64,8 +66,7 @@ function render_secret_field( array $args = array() ): void {
 			'help'        => '',
 		)
 	);
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo render_template( 'fields/secret', $data );
+	render_template( 'fields/secret', $data );
 }
 
 /**
@@ -92,8 +93,7 @@ function render_checkbox_field( array $args = array() ): void {
 			'help'  => '',
 		)
 	);
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo render_template( 'fields/checkbox', $data );
+	render_template( 'fields/checkbox', $data );
 }
 
 /**
@@ -118,12 +118,11 @@ function render_radiobuttons_field( array $args = array() ): void {
 		array(
 			'id'    => '',
 			'value' => '',
-			'value' => array(),
+			'options' => array(),
 			'help'  => '',
 		)
 	);
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo render_template( 'fields/radiobuttons', $data );
+	render_template( 'fields/radiobuttons', $data );
 }
 
 /**
@@ -154,8 +153,7 @@ function render_switch_field( array $args ): void {
 			'help'     => '',
 		)
 	);
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo render_template( 'fields/switch', $data );
+	render_template( 'fields/switch', $data );
 }
 
 /**
@@ -188,6 +186,5 @@ function render_number_field( array $args = array() ): void {
 			'help'  => '',
 		)
 	);
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo render_template( 'fields/number', $data );
+	render_template( 'fields/number', $data );
 }
