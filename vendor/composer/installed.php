@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'jcodigital/rek-ai',
-        'pretty_version' => 'v1.9.0',
-        'version' => '1.9.0.0',
-        'reference' => 'eeba97b6cd6c617376075db26dcd6376e67340dd',
+        'pretty_version' => 'v1.9.1',
+        'version' => '1.9.1.0',
+        'reference' => '849f0219f5ea80626bd4092758955a96f8a902ee',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'jcodigital/rek-ai' => array(
-            'pretty_version' => 'v1.9.0',
-            'version' => '1.9.0.0',
-            'reference' => 'eeba97b6cd6c617376075db26dcd6376e67340dd',
+            'pretty_version' => 'v1.9.1',
+            'version' => '1.9.1.0',
+            'reference' => '849f0219f5ea80626bd4092758955a96f8a902ee',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
