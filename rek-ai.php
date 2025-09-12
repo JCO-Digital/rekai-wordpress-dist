@@ -3,7 +3,7 @@
  * Plugin Name: Rek.ai
  * Plugin URI: https://docs.rek.ai/integration-modules/wordpress
  * Description: Rek.ai integration for WordPress
- * Version: 1.9.1
+ * Version: 1.9.2
  * Author: Rek.ai
  * Author URI: https://rek.ai
  * Domain Path: /languages
@@ -20,13 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Composer autoloader.
-use Rekai\Options\OptionsPage;
-
-require_once __DIR__ . '/vendor/autoload.php';
-
 // Constants for the plugin.
 require_once __DIR__ . '/consts.php';
+
+// Class Loader.
+require_once __DIR__ . '/classloader.php';
+
+use Rekai\Options\OptionsPage;
 
 // Helper functions for the plugin.
 require_once __DIR__ . '/includes/helpers.php';
