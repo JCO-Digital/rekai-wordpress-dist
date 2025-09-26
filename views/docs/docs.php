@@ -1,4 +1,10 @@
-<?php // phpcs:ignore Squiz.Commenting.FileComment.Missing
+<?php
+/**
+ * Links to the Rek.ai documentation.
+ *
+ * @package Rekai
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
