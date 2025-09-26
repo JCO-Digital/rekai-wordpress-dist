@@ -5,7 +5,7 @@
 **Requires at least:** 6.0  
 **Tested up to:** 6.8  
 **Requires PHP:** 8.0  
-**Stable tag:** 1.9.3  
+**Stable tag:** 1.9.4  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -16,6 +16,8 @@ Integrates Rek.ai into WordPress.
 This plugin loads the Rek.ai scripts into WordPress. It can be used to configure search autocomplete, and it provides Gutenberg blocks to load recommendations and Questions & Answers.
 
 This plugin requires a Rek.ai account to use.
+
+Plugin source code: https://github.com/JCO-Digital/rekai-wordpress
 
 ### Features ###
 - Loads Rek.ai scripts into WordPress.
